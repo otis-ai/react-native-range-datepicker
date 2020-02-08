@@ -214,7 +214,7 @@ export default class RangeDatepicker extends Component {
 				) : null }
 
 				{ (this.props.showSelectionInfo) ? (
-					<View style={{ flexDirection: 'row', justifyContent: "space-between", paddingHorizontal: 20, paddingBottom: 5, alignItems: 'center' }}>
+					<View style={[ { flexDirection: 'row', justifyContent: "space-between", paddingHorizontal: 20, paddingBottom: 5, alignItems: 'center' }, this.props.selectionStyle ? this.props.selectionStyle : null ]}>
 						<View style={{ flex: 1 }}>
 							<Text style={[ { fontSize: 34, color: '#666' }, this.props.startStyle ? this.props.startStyle : null ]}>
 								{ this.state.startDate ? moment(this.state.startDate).format("MMM DD YYYY") : this.props.placeHolderStart }
