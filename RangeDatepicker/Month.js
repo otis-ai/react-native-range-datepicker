@@ -118,15 +118,16 @@ export default class Month extends React.Component {
 		const dayStack = this.getDayStack(moment(month, 'YYYYMM'));
 		return (
 			<View>
-				<Text style={{fontSize: 14, padding: 14}}>{moment(month, 'YYYYMM').format("MMMM YYYY")}</Text>
+				<Text style={[{ fontSize: 14, padding: 14 }, this.props.monthHeaderTextStyle ? this.props.monthHeaderTextStyle : null]}>
+					{moment(month, 'YYYYMM').format("MMMM YYYY")}
+				</Text>
+
 				<View>
-					{
-						dayStack.map((days, i) => {
-							return (
-								<DayRow days={days} dayProps={dayProps} key={i} onSelectDate={this.props.onSelectDate}/>
-							)
-						})
-					}
+					{ dayStack.map((days, i) => {
+						return (
+							<DayRow days={days} dayProps={dayProps} key={i} onSelectDate={this.props.onSelectDate}/>
+						)
+					})}
 				</View>
 			</View>
 		);
