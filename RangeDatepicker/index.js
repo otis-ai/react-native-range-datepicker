@@ -1,5 +1,5 @@
 'use strict'
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Text,
@@ -14,7 +14,7 @@ import {
 import Month from './Month';
 import moment from 'moment';
 
-export default class RangeDatepicker extends PureComponent {
+export default class RangeDatepicker extends React.Component {
 	constructor(props) {
 		super(props);
 
