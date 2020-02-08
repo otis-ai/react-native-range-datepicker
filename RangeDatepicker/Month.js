@@ -118,7 +118,7 @@ export default class Month extends React.Component {
 		const dayStack = this.getDayStack(moment(month, 'YYYYMM'));
 		return (
 			<View>
-				<Text style={[{ fontSize: 14, padding: 14 }, this.props.monthHeaderTextStyle ? this.props.monthHeaderTextStyle : null]}>
+				<Text style={{ fontSize: 14, padding: 14 }}>
 					{moment(month, 'YYYYMM').format("MMMM YYYY")}
 				</Text>
 
