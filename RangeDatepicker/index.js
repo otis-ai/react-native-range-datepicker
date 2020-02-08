@@ -14,7 +14,7 @@ import {
 import Month from './Month';
 import moment from 'moment';
 
-export default class RangeDatepicker extends Component {
+export default class RangeDatepicker extends PureComponent {
 	constructor(props) {
 		super(props);
 
