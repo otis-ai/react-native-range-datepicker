@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   Text,
-  View,
+	View,
+	Image,
   FlatList,
   StyleSheet,
 	Button
