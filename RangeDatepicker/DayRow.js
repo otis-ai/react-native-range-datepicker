@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import Day from './Day';
 
-export default class DayRow extends React.Component {
+export default class DayRow extends React.PureComponent {
 	constructor(props) {
 		super(props);
 	}

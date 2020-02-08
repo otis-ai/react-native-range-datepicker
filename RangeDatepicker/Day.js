@@ -12,7 +12,7 @@ import moment from 'moment';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 
-export default class Day extends React.Component {
+export default class Day extends React.PureComponent {
 	constructor(props) {
 		super(props);
 	}

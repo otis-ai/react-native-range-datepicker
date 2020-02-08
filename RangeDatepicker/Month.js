@@ -7,7 +7,7 @@ import {
 import DayRow from './DayRow'
 import moment from 'moment'
 
-export default class Month extends React.Component {
+export default class Month extends React.PureComponent {
 	constructor(props) {
 		super(props);
 	}
