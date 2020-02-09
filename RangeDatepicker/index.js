@@ -57,6 +57,8 @@ export default class RangeDatepicker extends React.Component {
 		infoContainerStyle: {marginRight: 20, paddingHorizontal: 20, paddingVertical: 5, backgroundColor: 'green', borderRadius: 20, alignSelf: 'flex-end'},
 		showSelectionInfo: true,
 		showButton: true,
+		textStyleDay: {},
+		textStyleMonth: {}
 	};
 
 
@@ -88,6 +90,8 @@ export default class RangeDatepicker extends React.Component {
 		infoContainerStyle: PropTypes.object,
 		showSelectionInfo: PropTypes.bool,
 		showButton: PropTypes.bool,
+		textStyleDay: PropTypes.object,
+		textStyleMonth: PropTypes.object
 	};
 
 	componentWillReceiveProps(nextProps) {
@@ -177,8 +181,24 @@ export default class RangeDatepicker extends React.Component {
 	}
 
 	handleRenderRow(month, index) {
-		const { selectedBackgroundColor, selectedTextColor, todayColor, ignoreMinDate, minDate, maxDate } = this.props;
-		let { availableDates, startDate, untilDate } = this.state;
+		const { 
+			selectedBackgroundColor, 
+			selectedTextColor, 
+			todayColor, 
+			ignoreMinDate,
+			minDate,
+			maxDate, 
+			textStyleDay, 
+			textStyleMonth 
+		
+		} = this.props;
+
+		let { 
+			availableDates, 
+			startDate, 
+			untilDate 
+		
+		} = this.state;
 
 		if (availableDates && availableDates.length > 0) {
 			availableDates = availableDates.filter((d) => {
@@ -198,7 +218,9 @@ export default class RangeDatepicker extends React.Component {
 				maxDate={maxDate ? moment(maxDate, 'YYYYMMDD') : maxDate}
 				ignoreMinDate={ignoreMinDate}
 				dayProps={{selectedBackgroundColor, selectedTextColor, todayColor}}
-				month={month} />
+				month={month}
+				textStyleDay={textStyleDay}
+				textStyleMonth={textStyleMonth} />
 		);
 	}
 
