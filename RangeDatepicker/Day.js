@@ -66,17 +66,19 @@ export default class Day extends React.Component {
 		}
 
 		if (day.date) {
+			const isToday = (day.date == moment().format("YYYYMMDD"));
+
 			if (day.type == 'disabled') {
 				return (
 					<TouchableWithoutFeedback activeOpacity={1} style={dayStyle}>
 						<View style={{...dayStyle, height: Math.floor(DEVICE_WIDTH / 7), justifyContent: 'center'}}>
-							<Text style={[{
+							<Text style={[textStyleDay, (isToday) ? textStyleToday : null, {
 								...textDayStyle, 
 								textAlign: "center", 
 								backgroundColor: 'transparent', 
 								fontSize: Math.floor(DEVICE_WIDTH / 26)
 							
-							}, textStyleDay]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
+							}]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
 							
 							{ (day.date == moment().format("YYYYMMDD")) ? (
 								<View style={{position: 'absolute', top:0, bottom:0, left:0, right: 0, justifyContent: 'center', backgroundColor: 'transparent'}}>
@@ -95,13 +97,13 @@ export default class Day extends React.Component {
 				return (
 					<TouchableWithoutFeedback activeOpacity={1} style={dayStyle}>
 						<View style={{...dayStyle, height: Math.floor(DEVICE_WIDTH / 7), justifyContent: 'center'}}>
-							<Text style={[{
+							<Text style={[textStyleDay, {
 								...textDayStyle, 
 								textAlign: "center", 
 								backgroundColor: 'transparent', 
 								fontSize: Math.floor(DEVICE_WIDTH / 26)
 							
-							}, textStyleDay]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
+							}]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
 							
 							<View style={{position: 'absolute', top: strikeTop, bottom:0, left:0, right: 0, justifyContent: 'center', backgroundColor: 'transparent'}}>
 								<Text style={{fontSize: Math.floor(DEVICE_WIDTH / 17), color: '#ccc', textAlign: 'center'}}>__</Text>
@@ -114,20 +116,20 @@ export default class Day extends React.Component {
 				return (
 					<TouchableWithoutFeedback activeOpacity={1} style={dayStyle} onPress={() => this.props.onSelectDate(moment(day.date, 'YYYYMMDD'))}>
 						<View style={{...dayStyle, height: Math.floor(DEVICE_WIDTH / 7), justifyContent: 'center'}}>
-							<Text style={[{
+							<Text style={[textStyleDay, (isToday) ? textStyleToday : null, {
 								...textDayStyle, 
 								textAlign: "center", 
 								backgroundColor: 'transparent', 
 								fontSize: Math.floor(DEVICE_WIDTH / 26)
 							
-							}, textStyleDay]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
+							}]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
 							
-							{ (day.date == moment().format("YYYYMMDD")) ? (
+							{/* { (day.date == moment().format("YYYYMMDD")) ? (
 								<View style={{position: 'absolute', top:0, bottom:0, left:0, right: 0, justifyContent: 'center', backgroundColor: 'transparent'}}>
 									<Text style={{fontSize: Math.floor(DEVICE_WIDTH / 17), fontWeight: 'bold', color: dayProps.selectedBackgroundColor, textAlign: 'center'}}>__</Text>
 								</View>
 								
-							) : null }
+							) : null } */}
 
 						</View>
 					</TouchableWithoutFeedback>
