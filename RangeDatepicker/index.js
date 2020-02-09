@@ -288,7 +288,7 @@ export default class RangeDatepicker extends React.Component {
 					
 				<View style={styles.dayHeader}>
 					{ this.props.dayHeadings.map((day, i) => {
-							return (<Text style={[{ width: '14.28%', textAlign: 'center' }, textStyleDayHeader]} key={i}>{day}</Text>)
+							return (<Text style={[{ width: '14.28%', textAlign: 'center' }, this.props.textStyleDayHeader]} key={i}>{day}</Text>)
 						})
 					}
 				</View>
