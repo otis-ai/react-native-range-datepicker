@@ -59,7 +59,8 @@ export default class RangeDatepicker extends React.Component {
 		showButton: true,
 		textStyleDay: {},
 		textStyleMonth: {},
-		textStyleToday: {}
+		textStyleToday: {},
+		textStyleDayHeader: {}
 	};
 
 
@@ -93,11 +94,14 @@ export default class RangeDatepicker extends React.Component {
 		showButton: PropTypes.bool,
 		textStyleDay: PropTypes.object,
 		textStyleMonth: PropTypes.object,
-		textStyleToday: PropTypes.object
+		textStyleToday: PropTypes.object,
+		textStyleDayHeader: PropTypes.object
 	};
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({availableDates: nextProps.availableDates});
+		this.setState({
+			availableDates: nextProps.availableDates
+		});
 	}
 
 	onSelectDate(date) {
@@ -156,7 +160,13 @@ export default class RangeDatepicker extends React.Component {
 	getMonthStack() {
 		let res = [];
 		let initMonth = moment();
-		const { maxMonth, initialMonth, isHistorical } = this.props;
+
+		const { 
+			maxMonth, 
+			initialMonth, 
+			isHistorical 
+		
+		} = this.props;
 
 		if ((initialMonth) && (initialMonth != '')) {
 			initMonth = moment(initialMonth, 'YYYYMM');
@@ -278,7 +288,7 @@ export default class RangeDatepicker extends React.Component {
 					
 				<View style={styles.dayHeader}>
 					{ this.props.dayHeadings.map((day, i) => {
-							return (<Text style={{ width: "14.28%", textAlign: 'center' }} key={i}>{day}</Text>)
+							return (<Text style={[{ width: '14.28%', textAlign: 'center' }, textStyleDayHeader]} key={i}>{day}</Text>)
 						})
 					}
 				</View>
@@ -310,7 +320,7 @@ export default class RangeDatepicker extends React.Component {
 const styles = StyleSheet.create({
 	dayHeader : {
 		flexDirection: 'row',
-		borderBottomWidth: 1,
+		borderBottomWidth: 0.5,
 		paddingBottom: 10,
 		paddingTop: 10,
 	},
