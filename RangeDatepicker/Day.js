@@ -72,13 +72,13 @@ export default class Day extends React.Component {
 				return (
 					<TouchableWithoutFeedback activeOpacity={1} style={dayStyle}>
 						<View style={{...dayStyle, height: Math.floor(DEVICE_WIDTH / 7), justifyContent: 'center'}}>
-							<Text style={[textStyleDay, (isToday) ? textStyleToday : null, {
+							<Text style={[textStyleDay, {
 								...textDayStyle, 
 								textAlign: "center", 
 								backgroundColor: 'transparent', 
-								fontSize: Math.floor(DEVICE_WIDTH / 26)
+								// fontSize: Math.floor(DEVICE_WIDTH / 26)
 							
-							}]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
+							}, (isToday) ? textStyleToday : null]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
 							
 							{ (day.date == moment().format("YYYYMMDD")) ? (
 								<View style={{position: 'absolute', top:0, bottom:0, left:0, right: 0, justifyContent: 'center', backgroundColor: 'transparent'}}>
@@ -101,7 +101,7 @@ export default class Day extends React.Component {
 								...textDayStyle, 
 								textAlign: "center", 
 								backgroundColor: 'transparent', 
-								fontSize: Math.floor(DEVICE_WIDTH / 26)
+								// fontSize: Math.floor(DEVICE_WIDTH / 26)
 							
 							}]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
 							
@@ -116,13 +116,13 @@ export default class Day extends React.Component {
 				return (
 					<TouchableWithoutFeedback activeOpacity={1} style={dayStyle} onPress={() => this.props.onSelectDate(moment(day.date, 'YYYYMMDD'))}>
 						<View style={{...dayStyle, height: Math.floor(DEVICE_WIDTH / 7), justifyContent: 'center'}}>
-							<Text style={[textStyleDay, (isToday) ? textStyleToday : null, {
+							<Text style={[textStyleDay, {
 								...textDayStyle, 
 								textAlign: "center", 
 								backgroundColor: 'transparent', 
-								fontSize: Math.floor(DEVICE_WIDTH / 26)
+								// fontSize: Math.floor(DEVICE_WIDTH / 26)
 							
-							}]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
+							}, (isToday) ? textStyleToday : null]}>{moment(day.date, 'YYYYMMDD').date()}</Text>
 							
 							{/* { (day.date == moment().format("YYYYMMDD")) ? (
 								<View style={{position: 'absolute', top:0, bottom:0, left:0, right: 0, justifyContent: 'center', backgroundColor: 'transparent'}}>
