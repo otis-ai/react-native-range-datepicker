@@ -31,7 +31,8 @@ export default class DayRow extends React.Component {
 								day={day}
 								dayProps={this.props.dayProps} 
 								textStyleDay={this.props.textStyleDay}
-								onSelectDate={this.props.onSelectDate} />
+								onSelectDate={this.props.onSelectDate}
+								textStyleToday={this.props.textStyleToday} />
 						)
 					})
 				}

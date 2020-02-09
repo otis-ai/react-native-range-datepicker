@@ -58,7 +58,8 @@ export default class RangeDatepicker extends React.Component {
 		showSelectionInfo: true,
 		showButton: true,
 		textStyleDay: {},
-		textStyleMonth: {}
+		textStyleMonth: {},
+		textStyleToday: {}
 	};
 
 
@@ -91,7 +92,8 @@ export default class RangeDatepicker extends React.Component {
 		showSelectionInfo: PropTypes.bool,
 		showButton: PropTypes.bool,
 		textStyleDay: PropTypes.object,
-		textStyleMonth: PropTypes.object
+		textStyleMonth: PropTypes.object,
+		textStyleToday: PropTypes.object
 	};
 
 	componentWillReceiveProps(nextProps) {
@@ -101,7 +103,6 @@ export default class RangeDatepicker extends React.Component {
 	onSelectDate(date) {
 		let startDate = null;
 		let untilDate = null;
-		const { availableDates } = this.state;
 
 		if ((this.state.startDate) && (!this.state.untilDate)) {
 			if ((date.format('YYYYMMDD') < this.state.startDate.format('YYYYMMDD')) || (this.isInvalidRange(date))) {
@@ -129,7 +130,12 @@ export default class RangeDatepicker extends React.Component {
 	}
 
 	isInvalidRange(date) {
-		const { startDate, untilDate, availableDates } = this.state;
+		const { 
+			startDate, 
+			untilDate, 
+			availableDates 
+		
+		} = this.state;
 
 		if ((availableDates) && (availableDates.length > 0)) {
 			if ((startDate) && (!untilDate)) {
@@ -189,7 +195,8 @@ export default class RangeDatepicker extends React.Component {
 			minDate,
 			maxDate, 
 			textStyleDay, 
-			textStyleMonth 
+			textStyleMonth,
+			textStyleToday
 		
 		} = this.props;
 
@@ -220,7 +227,8 @@ export default class RangeDatepicker extends React.Component {
 				dayProps={{selectedBackgroundColor, selectedTextColor, todayColor}}
 				month={month}
 				textStyleDay={textStyleDay}
-				textStyleMonth={textStyleMonth} />
+				textStyleMonth={textStyleMonth}
+				textStyleToday={textStyleToday} />
 		);
 	}
 

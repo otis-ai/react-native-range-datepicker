@@ -129,7 +129,8 @@ export default class Month extends React.Component {
 			month, 
 			dayProps, 
 			textStyleDay,
-			textStyleMonth 
+			textStyleMonth,
+			textStyleToday
 		
 		} = this.props;
 
@@ -149,6 +150,7 @@ export default class Month extends React.Component {
 								days={days} 
 								dayProps={dayProps} 
 								textStyleDay={textStyleDay}
+								textStyleToday={textStyleToday}
 								onSelectDate={this.props.onSelectDate} />
 						)
 					})}
