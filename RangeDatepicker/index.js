@@ -319,7 +319,7 @@ export default class RangeDatepicker extends React.Component {
 
 const styles = StyleSheet.create({
 	dayHeader : {
-		color: '#E0E0E0',
+		borderColor: '#E0E0E0',
 		flexDirection: 'row',
 		borderBottomWidth: 1,
 		paddingBottom: 10,
